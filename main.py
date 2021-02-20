@@ -3,11 +3,13 @@
 #               Kokorina D. (%),
 #               Novoselov V. (%)
 from textblob import TextBlob
-t = input('Введите текст:')
-txt = TextBlob(t)
-sent = TextBlob.sentences(t)
-print(sent)
 import nltk
 nltk.download('punkt')
+t = input('Введите текст:')
+txt = TextBlob(t)
+print(len((txt.sentences)))
+print(len((txt.words)))
+
+
 
 
