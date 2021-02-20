@@ -4,12 +4,11 @@
 #               Novoselov V. (%)
 from textblob import TextBlob
 import nltk
-nltk.download('punkt')
 t = input('Введите текст:')
 txt = TextBlob(t)
-print(len((txt.sentences)))
-print(len((txt.words)))
-
-
-
-
+print('Предложений:',len((txt.sentences)))
+print('Слов:',len((txt.words)))
+print('Средняя длина предложения в словах:',(len((txt.words))/len((txt.sentences))))
+FRE = 206.835 - (1.3 * ASL) - (60.1 * ASW)
+print('Индекс удобочитаемости Флеша:',FRE)
+print('Объективность:',(1 - txt.sentiment[1]),'%')
