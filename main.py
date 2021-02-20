@@ -4,7 +4,9 @@
 #               Novoselov V. (%)
 from textblob import TextBlob
 import nltk
-nltk.download('punkt')
 t = input('Введите текст:')
 txt = TextBlob(t)
-print(len((txt.sentences)))
+print('Предложений:',len((txt.sentences)))
+print('Слов:',len((txt.words)))
+print('Средняя длина предложения в словах:',(len((txt.words))/len((txt.sentences))))
+print('Объективность:',(1 - txt.sentiment[1]),'%')
