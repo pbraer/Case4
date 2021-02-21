@@ -28,5 +28,5 @@ elif analysisPol < 0:
     print('Тональность текста: отрицательный')
 elif analysisPol > 0:
     print('Тональность текста: положительный')
-fre= 206,835 − 1,015*(len((txt.words))/len((txt.sentences) − 84,6*l_word
+fre= 206,835-1,015*(len((txt.words))/len((txt.sentences)-84,6*l_word
 print("Индекс удобочитаемости Флеша:", fre)
