@@ -25,23 +25,9 @@ ASL = (len(txt.words)/len(txt.sentences))
 ASW = sl / len(txt.words)
 print('Предложений:',len(txt.sentences))
 print('Слов:',len(txt.words))
-print('Средняя длина предложения в словах:', ASL)
 print('Слогов:', sl)
+print('Средняя длина предложения в словах:', ASL)
 print('Средняя длина слова в слогах:', ASW)
-if lang == "ru":
-    print('Объективность:',round(((1 - txt2.sentiment[1])*100),1), '%')
-else:
-    print('Объективность:',round(((1 - txt.sentiment[1])*100),1), '%')
-if lang == "ru":
-    analysisPol = TextBlob(t1).polarity
-else:
-    analysisPol = TextBlob(t).polarity
-if -0.33 <= analysisPol <= 0.33:
-    print('Тональность текста: нейтральный')
-elif analysisPol < -0.33:
-    print('Тональность текста: отрицательный')
-elif analysisPol > 0.33:
-    print('Тональность текста: положительный')
 if lang == "ru":
     fre=206.835-(1.3 * ASL)-(60.1*ASW)
     print ("Индекс удобочитаемости Флеша:", fre)
@@ -64,5 +50,18 @@ else:
         print('Текст немного трудно читать (для студентов).')
     elif fre < 25:
         print('Текст трудно читается (для выпускников ВУЗов).')
+if -0.33 <= analysisPol <= 0.33:
+    print('Тональность текста: нейтральный')
+elif analysisPol < - 0.33:
+    print('Тональность текста: отрицательный')
+elif analysisPol > 0.33:
+    print('Тональность текста: положительный')
 
-
+if lang == "ru":
+    print('Объективность:',round(((1 - txt2.sentiment[1])*100),1), '%')
+else:
+    print('Объективность:',round(((1 - txt.sentiment[1])*100),1), '%')
+if lang == "ru":
+    analysisPol = TextBlob(t2).sentiment[0]
+else:
+    analysisPol = TextBlob(t).sentiment[0]
