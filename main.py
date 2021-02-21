@@ -1,7 +1,7 @@
 # Case-study #4
-# Developers:   Braer P. (%),
-#               Kokorina D. (%),
-#               Novoselov V. (%)
+# Developers:   Braer P. 50(%),
+#               Kokorina D. 50(%),
+#               Novoselov V. 50(%)
 import math
 from textblob import TextBlob
 from translate import Translator
