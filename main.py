@@ -3,11 +3,13 @@
 #               Kokorina D. (%),
 #               Novoselov V. (%)
 from textblob import TextBlob
+from translate import Translator
 import nltk
 t = input('Введите текст:')
 txt = TextBlob(t)
 vowel = ['а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я', 'a', 'e', 'i', 'u', 'y', 'o']
 n = 0
+t2 = t.translate()
 print('Предложений:',len((txt.sentences)))
 print('Слов:',len((txt.words)))
 print('Средняя длина предложения в словах:',(len((txt.words))/len((txt.sentences))))
@@ -18,3 +20,10 @@ for i in range(len(t)):
 print('Слогов:', n)
 l_word = n / len((txt.words))
 print('Средняя длина слова в слогах:', l_word)
+analysisPol = TextBlob(t2).polarity
+if analysisPol == 0:
+    print('Тональность текста: нейтральный')
+elif analysisPol < 0:
+    print('Тональность текста: отрицательный')
+elif analysisPol > 0:
+    print('Тональность текста: положительный')
