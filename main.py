@@ -8,6 +8,7 @@ t = input('Введите текст:')
 txt = TextBlob(t)
 vowel = ['а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я', 'a', 'e', 'i', 'u', 'y', 'o']
 n = 0
+
 translator = Translator(from_lang="russian", to_lang="english")
 t1 = translator.translate(t)
 t2 = t1.lower()
