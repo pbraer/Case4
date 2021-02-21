@@ -33,12 +33,12 @@ if lang == "ru":
 else:
     print('Объективность:',round(((1 - txt.sentiment[1])*100),1), '%')
 if lang == "ru":
-    analysisPol = TextBlob(t1).polarity
+    analysisPol = TextBlob(t2).sentiment[0]
 else:
-    analysisPol = TextBlob(t).polarity
+    analysisPol = TextBlob(t).sentiment[0]
 if -0.33 <= analysisPol <= 0.33:
     print('Тональность текста: нейтральный')
-elif analysisPol < -0.33:
+elif analysisPol < - 0.33:
     print('Тональность текста: отрицательный')
 elif analysisPol > 0.33:
     print('Тональность текста: положительный')
