@@ -16,3 +16,5 @@ for i in range(len(t)):
     if t[i] in vowel:
         n += 1
 print('Слогов:', n)
+l_word = n / len((txt.words))
+print('Средняя длина слова в слогах:', l_word)
